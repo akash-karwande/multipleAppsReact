@@ -1,38 +1,163 @@
 .App {
   text-align: center;
+  padding-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.expense-app,
+.weather-app,
+.add-expense,
+.update-expense,
+.expense-filter {
+  text-align: center;
+  padding: 20px 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.expense-filter input {
+  height: 30px;
+  width: 300px;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hr-tag {
+  width: 300px;
+}
+
+.expense-description {
+  text-transform: uppercase;
+}
+
+.expense-filter select {
+  height: 35px;
+  margin-left: 5px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 5px 15px;
+}
+
+.expense-form {
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.expense-form button,
+.update-expense button {
+  color: #fff;
+  padding: 10px 15px;
+  background: #000;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.expense-form input,
+.expense-form textarea {
+  width: 300px;
+  height: 35px;
+  margin-bottom: 10px;
+  text-align: center;
+  resize: none;
+}
+
+.add-expense a {
+  color: #fff;
+  padding: 10px 15px;
+  background: #000;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+header span {
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer span {
+  padding: 10px;
+}
+
+.music-component {
+  text-align: center;
+}
+
+.artist-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.track {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.track-icon {
+  position: absolute;
+  bottom: 90px;
+  background-color: #000;
+  color: #fff;
+  left: 100px;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  opacity: 0.8;
+  border-radius: 50%;
+}
+
+.track-icon span {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 1px;
+  font-weight: bolder;
+}
+
+.track-image {
+  width: 250px;
+  height: 250px;
+}
+
+.track-text {
+  position: absolute;
+  width: 240px;
+  bottom: -20px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+}
+
+#input-area {
+  height: 30px;
+  width: 300px;
+  margin-bottom: 10px;
+  outline: none;
+  text-align: center;
+  color: #000;
+  font-size: 15px;
+}
+
+#button-ele {
+  height: 35px;
+  padding: 5px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  cursor: pointer;
 }

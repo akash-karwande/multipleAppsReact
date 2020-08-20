@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AppRouter from './AppRouter';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import { addExpense } from './actions/expenses';
+import getVisibleExpenses from './selectors/expenses'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+const store = configureStore();
+
+store.dispatch(addExpense({ description: 'water bill',createdAt: 0,amount: 123 }));
+store.dispatch(addExpense({ description: 'Gas bill',createdAt: 1, amount: 90 }));
+store.dispatch(addExpense({ description: 'rent',createdAt: 12, amount: 70}));
+
+const state = store.getState();
+const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+console.log(visibleExpenses);
+
+const jsx = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+)
+
+
+ReactDOM.render(jsx, document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
