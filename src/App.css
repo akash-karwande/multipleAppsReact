@@ -1,19 +1,28 @@
 .App {
   text-align: center;
-  padding-top: 20px;
+  margin-top: 70px;
 }
+
 
 header {
   text-align: center;
+  padding: 15px;
+  background: #e0e0e0e0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+  top: 0;
 }
 
 .expense-app,
 .weather-app,
 .add-expense,
+.music-component,
 .update-expense,
 .expense-filter {
   text-align: center;
-  padding: 20px 0px;
+  margin-top: 70px;
 }
 
 .expense-filter input {
@@ -30,9 +39,14 @@ a {
   width: 300px;
 }
 
+footer {
+  background: #e0e0e0;
+}
+
 .expense-description {
   text-transform: uppercase;
 }
+
 
 .expense-filter select {
   height: 35px;

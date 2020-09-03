@@ -6,18 +6,17 @@ import AppRouter from './AppRouter';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
-import {getVisibleExpenses} from './selectors/expenses'
+import { getVisibleExpenses } from './selectors/expenses'
 
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'water bill',createdAt: 0,amount: 123 }));
-store.dispatch(addExpense({ description: 'Gas bill',createdAt: 1, amount: 90 }));
-store.dispatch(addExpense({ description: 'rent',createdAt: 12, amount: 70}));
+store.dispatch(addExpense({ description: 'water bill', createdAt: 0, amount: 123 }));
+store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1, amount: 90 }));
+store.dispatch(addExpense({ description: 'rent', createdAt: 12, amount: 70 }));
 
 const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
+getVisibleExpenses(state.expenses, state.filters);
 
 const jsx = (
     <Provider store={store}>

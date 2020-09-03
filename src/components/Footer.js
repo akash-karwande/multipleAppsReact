@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 
 class Footer extends Component {
@@ -7,10 +6,7 @@ class Footer extends Component {
         return (
             <div>
                 <footer>
-                    <span><Link to='/'>Home</Link></span>
-                    <span><Link to='/music'>Music</Link></span>
-                    <span><Link to='/expense'>Expense</Link></span>
-                    <span><Link to='/weather'>Weather</Link></span>
+                    <p><a target='_blank' rel='noopener noreferrer' href='https:\\karwande.com'>Wanna know more about maker?</a></p>
                 </footer>
             </div>
         )
