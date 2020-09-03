@@ -38,6 +38,10 @@ header {
   top: 0;
 }
 
+.imageContainer {
+  text-align: center;
+}
+
 .expense-app,
 .image-search,
 .weather-app,
