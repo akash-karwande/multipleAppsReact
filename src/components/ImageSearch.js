@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getImages } from '../actions/image'
 import PropTypes from 'prop-types';
 
-function ImageSearch({ images: { imagesArray, loading }, getImages }) {
+function ImageSearch({ images: { imagesArray }, getImages, loading }) {
 
     const [name, setName] = useState('');
 
@@ -47,7 +47,8 @@ ImageSearch.prototype = {
 
 const mapStateToProps = (state) => {
     return {
-        images: state.images
+        images: state.images,
+        loading: state.images.loading
     }
 }
 

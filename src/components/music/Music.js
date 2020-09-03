@@ -1,26 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import Artist from './Artist';
 import Track from './Track';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getMusic } from '../../actions/music'
 
 const Music = ({ artist, songs, getMusic, loading }) => {
     const [name, setName] = useState('');
     useEffect(() => {
-        getMusic('guru randhawa')
-    }, [getMusic, name]);
- 
+        getMusic()
+    }, [getMusic]);
+
+    const onEnter = (e) => {
+
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code === 13) { //Enter keycode
+            getMusic(e.target.value)
+        }
+    }
     return (
 
         <div className="music-component">
             <h2>Music Lover</h2>
-            <input id="input-area" autoFocus type="text" onChange={e => setName(e.target.value)} placeholder="Search by artist" value={name} />
+            <input id="input-area" type="text" onKeyPress={onEnter} onChange={e => setName(e.target.value)} placeholder="Search by artist" value={name} />
             <button id="button-ele" onClick={() => getMusic(name)}>Search</button>
-            {loading && <h5>Loading ...</h5>}
-           {artist && !loading &&  <Artist artistInfo={artist}></Artist>}
+            {loading && <h4>Loading ...</h4>}
+            {artist && !loading && <Artist artistInfo={artist}></Artist>}
             <Track tracks={songs}></Track>
         </div>
     )
+
+}
+
+Music.prototype = {
+    artist: PropTypes.array.isRequired,
+    songs: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
+    getMusic: PropTypes.func.isRequired
 
 }
 

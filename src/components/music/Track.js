@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const Track = (props) => {
 
     const { tracks } = props;
-    console.log(tracks);
 
     const [songStatus, setSongStatus] = useState({
         playing: false,

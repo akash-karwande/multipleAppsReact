@@ -1,60 +1,43 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import WeatherGet from './WeatherGet';
+import { connect } from 'react-redux';
+import { getWeather } from '../../actions/weather'
+
+const WeatherSearch = ({ weather,loading, getWeather }) => {
+
+    const [city, setCity] = useState('');
+
+    useEffect(() => {
+        getWeather();
+    },[getWeather])
 
 
-const apiKey = 'e84fe97ab68c371f1d4e97d3aeaf3e9c';
-const URL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-
-export class WeatherSearch extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            location: 'Mumbai',
-            weather: ''
-        }
+    const handleInput = (event) => {
+        setCity(event.target.value)
     }
 
-    async getCurrentWeather() {
-        try {
-            const response = await axios.get(`${URL}${ this.state.location }&appid=${apiKey}`);
-            await this.setState({ weather: response.data });
-        } catch (err) {
-            alert('Not found for this city');
-            console.log(err);
-        }
-    }
-
-    handleInput = (event) => {
-        this.setState({
-            location: event.target.value
-        });
-    }
-
-    onType = (event) => {
+    const onType = (event) => {
         if (event.key === "Enter") {
-            this.getCurrentWeather();
+            getWeather(city);
         }
     }
 
-    componentDidMount() {
-        this.getCurrentWeather();
-    }
+    return (
+        <div className='weather-app'>
+            <input id="input-area" type='text' onKeyPress={onType} onChange={handleInput} placeholder='Search weather for your location' value={city} />
+            <button id="button-ele" onClick={() => getWeather(city)}>Search</button>
 
+            {loading && <h4>Loading...</h4>}
 
-    render() {
-        
-        return (
-            <div className='weather-app'>
-                <input  id="input-area" type='text' onKeyPress={this.onType} onChange={this.handleInput} placeholder='Search weather for your location'value={this.state.location} />
-                {/* <button id="button-ele" onClick={this.getCurrentWeather}>Search</button> */}
-
-                <WeatherGet weather={this.state.weather} />
-            </div>
-        )
-
-    }
+            <WeatherGet weather={weather} />
+        </div>
+    )
 }
 
-export default WeatherSearch
+const mapStateToProps = (state) => {
+    return {
+        weather: state.weather,
+        loading: state.weather.loading
+    }
+}
+export default connect(mapStateToProps, { getWeather })(WeatherSearch)

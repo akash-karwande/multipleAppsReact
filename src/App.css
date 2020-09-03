@@ -3,6 +3,12 @@
   margin-top: 70px;
 }
 
+.weather-app {
+  height: 80vh;
+  line-height: 3;
+  background: #e0e0e012;
+}
+
 footer p {
   padding: 8px;
 }
