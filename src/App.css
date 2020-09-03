@@ -3,6 +3,18 @@
   margin-top: 70px;
 }
 
+footer p {
+  padding: 8px;
+}
+
+.header-logo {
+  text-align: left;
+  position: absolute;
+}
+
+.header-logo a {
+  color: #000;
+}
 
 header {
   text-align: center;
@@ -46,7 +58,6 @@ footer {
 .expense-description {
   text-transform: uppercase;
 }
-
 
 .expense-filter select {
   height: 35px;
@@ -174,4 +185,10 @@ footer span {
   outline: none;
   margin-left: 10px;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .header-logo {
+    display: none;
+  }
 }

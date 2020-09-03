@@ -1,67 +1,66 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-class Track extends Component {
+const Track = (props) => {
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             playing: false,
-             audio: null,
-             playingPreUrl: null
-        }
-    }
-    
+    const { tracks } = props;
+    console.log(tracks);
 
-    playAudio = (previewUrl) => {
+    const [songStatus, setSongStatus] = useState({
+        playing: false,
+        audio: null,
+        playingPreUrl: null
+    })
+
+    const playAudio = (previewUrl) => {
         const audio = new Audio(previewUrl);
 
-        if(!this.state.playing) {
+        if (!songStatus.playing) {
             audio.play();
-            this.setState({playing: true, audio, playingPreUrl: previewUrl});
+            setSongStatus({ playing: true, audio, playingPreUrl: previewUrl });
         } else {
-            this.state.audio.pause();
+            // this.state.audio.pause();
 
-            if (this.state.playingPreUrl === previewUrl) {
-                this.setState({playing: false});
+            songStatus.audio.pause();
+
+            if (songStatus.playingPreUrl === previewUrl) {
+                setSongStatus({ playing: false, audio, playingPreUrl: previewUrl });
             } else {
                 audio.play();
-                this.setState({audio, playingPreUrl: previewUrl});
+                setSongStatus({ playing: true, audio, playingPreUrl: previewUrl });
             }
-           
+
         }
-      
+
     }
 
-    trackIcon = (track) => {
-        if(!track.preview_url) {
+    const trackIcon = (track) => {
+        if (!track.preview_url) {
             return <span>N/A</span>
         }
-        if( this.state.playing && this.state.playingPreUrl === track.preview_url ) {
+        if (songStatus.playing && songStatus.playingPreUrl === track.preview_url) {
             return <span>| |</span>
         }
         return <span>&#9654;</span>
     }
 
-    render() {
-        const { tracks } = this.props;
-        return (
 
-            <div>
-                {tracks.map(track => {
-                    const { id, name, album, preview_url } = track;
+    return (
 
-                    return (
-                        <div key={id} onClick={() => this.playAudio(preview_url)} className="track">
-                            <img className="track-image" src={album.images[0].url} alt="track-avatar"></img>
-                            <p className="track-text">{name}</p>
-                            <p className="track-icon" >{this.trackIcon(track)}</p>
-                        </div>
-                    )
-                })}
-            </div>
-        )
-    }
+        <div>
+            {tracks && tracks.map(track => {
+                const { id, name, album, preview_url } = track;
+
+                return (
+                    <div key={id} onClick={() => playAudio(preview_url)} className="track">
+                        <img className="track-image" src={album.images[0].url} alt="track-avatar"></img>
+                        <p className="track-text">{name}</p>
+                        <p className="track-icon" >{trackIcon(track)}</p>
+                    </div>
+                )
+            })}
+        </div>
+    )
+
 }
 
 export default Track

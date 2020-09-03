@@ -6,6 +6,9 @@ class Header extends Component {
         return (
             <div>
                 <header>
+                    <div className='header-logo'>
+                        <Link to='/'>react-Redux</Link>
+                    </div>
                     <span><Link to='/'>Home</Link></span>
                     <span><Link to='/music'>Music</Link></span>
                     <span><Link to='/expense'>Expense</Link></span>
