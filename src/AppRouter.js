@@ -11,6 +11,7 @@ import AddExpense from './components/expensify/AddExpense';
 import EditExpensePage from './components/expensify/EditExpensePage';
 import ExpenseDashboard from './components/expensify/ExpenseDashboard';
 import WeatherSearch from './components/weather/WeatherSearch';
+import ImageSearch from './components/ImageSearch';
 
 
 const AppRouter = () => {
@@ -20,6 +21,7 @@ const AppRouter = () => {
             <Header />
             <Switch>
                 <Route exact path='/' component={App}></Route>
+                <Route exact path='/images' component={ImageSearch}></Route>
                 <Route path='/music' component={Music}></Route>
                 <Route exact path='/expense' component={ExpenseDashboard}></Route>
                 <Route path="/add-expense" component={AddExpense}></Route>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -7,12 +7,12 @@ class Header extends Component {
             <div>
                 <header>
                     <div className='header-logo'>
-                        <Link to='/'>react-Redux</Link>
+                        <NavLink activeClassName='navactive' to='/'>react-Redux</NavLink>
                     </div>
-                    <span><Link to='/'>Home</Link></span>
-                    <span><Link to='/music'>Music</Link></span>
-                    <span><Link to='/expense'>Expense</Link></span>
-                    <span><Link to='/weather'>Weather</Link></span>
+                    <span><NavLink activeClassName='navactive' to='/images'>Images</NavLink></span>
+                    <span><NavLink activeClassName='navactive' to='/music'>Music</NavLink></span>
+                    <span><NavLink activeClassName='navactive' to='/expense'>Expense</NavLink></span>
+                    <span><NavLink activeClassName='navactive' to='/weather'>Weather</NavLink></span>
                 </header>
             </div>
         )

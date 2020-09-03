@@ -13,7 +13,8 @@ function ImageSearch({ images: { imagesArray }, getImages, loading }) {
 
     return (
         <Fragment>
-            <div>
+            <div className="image-search">
+            <h2>Search images</h2>
                 <input id="input-area" value={name} autoFocus type="text" onChange={e => setName(e.target.value)} placeholder="Search images by theme" />
                 <button id="button-ele" onClick={() => getImages(name)}>Search</button>
             </div>

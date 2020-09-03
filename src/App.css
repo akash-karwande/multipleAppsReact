@@ -22,11 +22,16 @@ footer p {
   color: #000;
 }
 
+.navactive {
+  color: #000;
+}
+
 header {
   text-align: center;
   padding: 15px;
   background: #e0e0e0e0;
   position: fixed;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
   width: 100%;
   left: 0;
   z-index: 999;
@@ -34,6 +39,7 @@ header {
 }
 
 .expense-app,
+.image-search,
 .weather-app,
 .add-expense,
 .music-component,
