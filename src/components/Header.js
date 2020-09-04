@@ -5,6 +5,9 @@ class Header extends Component {
     render() {
         return (
             <div>
+                <div className='fork'>
+                    <a rel="noopener noreferrer" href='https://github.com/akash-karwande?tab=repositories' target='_blank'>Fork me on Github</a>
+                </div>
                 <header>
                     <div className='header-logo'>
                         <NavLink activeClassName='navactive' to='/'>react-Redux</NavLink>

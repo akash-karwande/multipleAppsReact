@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import ImageSearch from './components/ImageSearch';
+import Game from './components/tictaktoc/Game';
 
 
 function App() {
   return (
     <div className="App">
+      <Game />
     </div>
   );
 }

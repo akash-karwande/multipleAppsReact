@@ -19,7 +19,7 @@ function ImageSearch({ images: { imagesArray }, getImages, loading }) {
                 <button id="button-ele" onClick={() => getImages(name)}>Search</button>
             </div>
 
-            {imagesArray.length === 0 ? (<h4>Images are not found for your search. Please try by modifying your input.</h4>) :
+            {imagesArray.length === 0 ? (<h4 className='images-notFound'>Images are not found for your search. Please try by modifying your input.</h4>) :
                 (<Fragment>
                     {loading && <h2>Loading images...</h2>}
                     <div className='imageContainer'>
