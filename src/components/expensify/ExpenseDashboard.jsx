@@ -4,6 +4,10 @@ import ExpenseListFilters from './ExpenseListFilters';
 import { Link } from 'react-router-dom';
 
 export class ExpenseDashboard extends Component {
+
+    componentDidMount() {
+        document.title = ' Expense | Dashboard'
+    }
     render() {
         return (
             <div className='expense-app'>

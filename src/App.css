@@ -1,25 +1,94 @@
 .App {
+  margin-top: 50px;
+  background: linear-gradient(45deg, #214169, #101a26);
+  color: #fff;
+  padding: 20px 100px;
+}
+
+body::-webkit-scrollbar {
+  background: linear-gradient(45deg, #214169, #101a26);
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #673AB7;
+}
+
+.game {
+  padding: 60px 0px;
+}
+.game-board {
   text-align: center;
-  margin-top: 70px;
+}
+
+.expense-app, .game {
+  height: 100vh;
+}
+
+.name1 span,
+.name2 span,
+.name3 span {
+  font-size: 40px;
+}
+
+.name3 {
+  margin-bottom: 1em;
+}
+
+body {
+  margin: 0;
+}
+
+.small {
+  width: 50%;
+}
+
+.image img {
+  height: 270px;
+  border: 5px solid #4300b9;
+}
+
+.name2 span,
+.name3 span {
+  font-weight: bold;
 }
 
 .fork {
   position: fixed;
-  background: #e0e0e05c;
+  background: #e0e0e0;
   padding: 10px;
-  left: -15px;
+  right: 0;
   top: 85px;
-  transform: rotate(-40deg);
+  transform: rotate(30deg);
+}
+
+.image {
+  margin-left: 20px;
+}
+
+.image-and-text {
+  display: flex;
+  width: 100%;
+  margin: 100px 0px;
 }
 
 .weather-app {
-  height: 80vh;
+  height: 100vh;
+  margin-top: 0px !important;
   line-height: 3;
-  background: #e0e0e012;
+  padding-top: 40px;
+  background: linear-gradient(45deg, #214169, #101a26);
+  color: #fff;
+}
+
+.small p {
+  margin: 0;
+  line-height: 1.5;
 }
 
 footer p {
   padding: 8px;
+  margin: 0;
 }
 
 .header-logo {
@@ -37,7 +106,7 @@ footer p {
 
 header {
   text-align: center;
-  padding: 15px;
+  padding: 15px 100px;
   background: #e0e0e0e0;
   position: fixed;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
@@ -47,7 +116,8 @@ header {
   top: 0;
 }
 
-.imageContainer, .images-notFound {
+.imageContainer,
+.images-notFound {
   text-align: center;
 }
 
@@ -215,5 +285,56 @@ footer span {
 @media (max-width: 767px) {
   .header-logo {
     display: none;
+  }
+
+  .App {
+    padding: 30px;
+    margin: 0;
+  }
+
+  .image img {
+    border: 5px solid #4300b9;
+    width: 90%;
+    height: unset;
+  }
+
+  .image {
+    margin-left: 0;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .small {
+    width: 100%;
+  }
+
+  .image-and-text {
+    display: block;
+    width: 100%;
+    margin: 100px 0px;
+  }
+
+  .track-image,
+  .track {
+    width: 300px;
+    height: 300px;
+  }
+
+  .track-text {
+    width: 289px;
+  }
+
+  .track-icon {
+    bottom: 100px;
+    left: 125px;
+  }
+
+  .fork {
+    opacity: 0.6;
+    z-index: 99;
   }
 }

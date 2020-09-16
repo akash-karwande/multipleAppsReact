@@ -7,8 +7,9 @@ import { getMusic } from '../../actions/music'
 
 const Music = ({ artist, songs, getMusic, loading }) => {
     const [name, setName] = useState('');
+
     useEffect(() => {
-        getMusic()
+        getMusic();
     }, [getMusic]);
 
     const onEnter = (e) => {
@@ -25,8 +26,8 @@ const Music = ({ artist, songs, getMusic, loading }) => {
             <input id="input-area" type="text" onKeyPress={onEnter} onChange={e => setName(e.target.value)} placeholder="Search by artist" value={name} />
             <button id="button-ele" onClick={() => getMusic(name)}>Search</button>
             {loading && <h4>Loading ...</h4>}
-            {artist && !loading && <Artist artistInfo={artist}></Artist>}
-            <Track tracks={songs}></Track>
+            {!loading && <Artist artistInfo={artist}></Artist>}
+            {!loading && <Track tracks={songs}></Track>}
         </div>
     )
 

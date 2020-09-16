@@ -8,6 +8,7 @@ function ImageSearch({ images: { imagesArray }, getImages, loading }) {
     const [name, setName] = useState('');
 
     useEffect(() => {
+        document.title = 'Images | Search'
         getImages(name);
     }, [getImages, name])
 
@@ -19,9 +20,9 @@ function ImageSearch({ images: { imagesArray }, getImages, loading }) {
                 <button id="button-ele" onClick={() => getImages(name)}>Search</button>
             </div>
 
-            {imagesArray.length === 0 ? (<h4 className='images-notFound'>Images are not found for your search. Please try by modifying your input.</h4>) :
+            {!loading && imagesArray.length === 0 ? (<h4 className='images-notFound'>Images are not found for your search. Please try by modifying your input.</h4>) :
                 (<Fragment>
-                    {loading && <h2>Loading images...</h2>}
+                    {loading && <h4>Loading...</h4>}
                     <div className='imageContainer'>
                         {imagesArray.map(image => {
                             const { id, downloads, favorites, webformatURL, largeImageURL } = image;

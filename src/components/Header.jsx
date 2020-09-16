@@ -12,10 +12,13 @@ class Header extends Component {
                     <div className='header-logo'>
                         <NavLink activeClassName='navactive' to='/'>react-Redux</NavLink>
                     </div>
-                    <span><NavLink activeClassName='navactive' to='/images'>Images</NavLink></span>
-                    <span><NavLink activeClassName='navactive' to='/music'>Music</NavLink></span>
-                    <span><NavLink activeClassName='navactive' to='/expense'>Expense</NavLink></span>
-                    <span><NavLink activeClassName='navactive' to='/weather'>Weather</NavLink></span>
+                    <div className='header-menu'>
+                        <span><NavLink activeClassName='navactive' to='/images'>Images</NavLink></span>
+                        <span><NavLink activeClassName='navactive' to='/music'>Music</NavLink></span>
+                        <span><NavLink activeClassName='navactive' to='/expense'>Expense</NavLink></span>
+                        <span><NavLink activeClassName='navactive' to='/weather'>Weather</NavLink></span>
+                        <span><NavLink activeClassName='navactive' to='/games'>Games</NavLink></span>
+                    </div>
                 </header>
             </div>
         )
