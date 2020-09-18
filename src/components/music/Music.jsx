@@ -23,7 +23,7 @@ const Music = ({ artist, songs, getMusic, loading }) => {
 
         <div className="music-component">
             <h2>Music Lover</h2>
-            <input id="input-area" type="text" onKeyPress={onEnter} onChange={e => setName(e.target.value)} placeholder="Search by artist" value={name} />
+            <input id="input-area" type="text" onKeyPress={onEnter} value={name} onChange={e => setName(e.target.value)} placeholder="Search by artist" />
             <button id="button-ele" onClick={() => getMusic(name)}>Search</button>
             {loading && <h4>Loading ...</h4>}
             {!loading && <Artist artistInfo={artist}></Artist>}

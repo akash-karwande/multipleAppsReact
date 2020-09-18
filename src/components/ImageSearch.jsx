@@ -22,7 +22,7 @@ function ImageSearch({ images: { imagesArray }, getImages, loading }) {
 
             {!loading && imagesArray.length === 0 ? (<h4 className='images-notFound'>Images are not found for your search. Please try by modifying your input.</h4>) :
                 (<Fragment>
-                    {loading && <h4>Loading...</h4>}
+                    {loading && <h4 className='loading'>Loading...</h4>}
                     <div className='imageContainer'>
                         {imagesArray.map(image => {
                             const { id, downloads, favorites, webformatURL, largeImageURL } = image;

@@ -1,8 +1,11 @@
 .App {
-  margin-top: 50px;
+  margin-top: 60px;
   background: linear-gradient(45deg, #214169, #101a26);
   color: #fff;
   padding: 20px 100px;
+}
+.fork a {
+  color: #000;
 }
 
 body::-webkit-scrollbar {
@@ -10,18 +13,46 @@ body::-webkit-scrollbar {
   width: 6px;
 }
 
+body *::-webkit-scrollbar {
+  display: none;
+}
+
 body::-webkit-scrollbar-thumb {
-  background: #673AB7;
+  background: #673ab7;
+}
+
+h4.MuiTypography-root.MuiTypography-h4 {
+  font-size: 20px;
+}
+
+h6.MuiTypography-root.MuiTypography-subtitle1 {
+  font-size: 10px;
+}
+
+.MuiGrid-spacing-xs-5 {
+  width: 100% !important;
+  margin: 0 !important;
+}
+.youtube {
+  margin-top: 50px !important;
+  background: linear-gradient(45deg, #214169, #101a26);
 }
 
 .game {
   padding: 60px 0px;
+  background: linear-gradient(45deg, #214169, #101a26);
+  color: #fff;
 }
 .game-board {
   text-align: center;
 }
 
-.expense-app, .game {
+.loading {
+  text-align: center;
+}
+
+.expense-app,
+.game {
   height: 100vh;
 }
 
@@ -53,12 +84,25 @@ body {
   font-weight: bold;
 }
 
+.expense-filter input {
+  margin-top: 30px;
+}
+
+footer a {
+  color: #000;
+  font-style: italic;
+}
+
+.small p {
+  font-style: italic;
+}
+
 .fork {
   position: fixed;
   background: #e0e0e0;
   padding: 10px;
   right: 0;
-  top: 85px;
+  top: 95px;
   transform: rotate(30deg);
 }
 
@@ -101,19 +145,25 @@ footer p {
 }
 
 .navactive {
+  background-image: linear-gradient(-90deg, rgb(0 0 0/0) 12%, #9dbdb5 30%, #0e6c53);
   color: #000;
+  border-radius: 5px;
 }
 
 header {
   text-align: center;
   padding: 15px 100px;
-  background: #e0e0e0e0;
+  background: linear-gradient(45deg, #214169, #101a26);
   position: fixed;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
   width: 100%;
   left: 0;
   z-index: 999;
   top: 0;
+  outline: none !important;
+}
+header:focus {
+  outline: none !important;
 }
 
 .imageContainer,
@@ -282,6 +332,109 @@ footer span {
   cursor: pointer;
 }
 
+.bm-burger-button {
+  width: 36px;
+  height: 30px;
+  left: 0px;
+  top: 12px;
+  color: #fff;
+}
+
+.bm-burger-button:focus,
+.bm-burger-button button:focus,
+.bm-cross-button button:focus {
+  outline: none;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-cross-button {
+  top: 25px !important;
+  right: 30px !important;
+}
+
+.bm-item.header-menu:focus {
+  border: none !important;
+  outline: none;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.bm-item.header-menu a {
+  color: #fff;
+  width: 100%;
+  display: block;
+  padding: 10px;
+  text-align: left;
+}
+
+header span svg {
+  position: relative;
+  top: 3px;
+}
+
+.bm-item.header-menu a:hover {
+  background-image: linear-gradient(-90deg, rgb(0 0 0 / 0%) 12%, #9dbdb5 30%, #0e6c53 100%);
+  color: #000;
+  border-radius: 5px;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 767px) {
   .header-logo {
     display: none;
@@ -336,5 +489,13 @@ footer span {
   .fork {
     opacity: 0.6;
     z-index: 99;
+  }
+
+  .MuiGrid-spacing-xs-5 > .MuiGrid-item {
+    padding: 0 !important;
+  }
+
+  .MuiPaper-root.MuiPaper-elevation6.MuiPaper-rounded {
+    height: 60% !important;
   }
 }
