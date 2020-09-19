@@ -10,7 +10,7 @@ export default () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
-    handleSubmit('fun fun function');
+    handleSubmit('#');
   },[])
 
   return (
@@ -36,7 +36,7 @@ export default () => {
       params: {
         part: "snippet",
         maxResults: 5,
-        key: 'AIzaSyDvKtijJNw-7ofvbVaD85uFKrCfd0eGRPk',
+        key: '****************',
         q: searchTerm,
       }
     });

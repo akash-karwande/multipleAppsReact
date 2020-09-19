@@ -16,7 +16,7 @@ export default ({ onSubmit }) => {
     <Paper elevation={2} style={{ padding: "10px" }}>
       <TextField
         fullWidth
-        label="Search..."
+        label="Search for videos..."
         value={searchTerm}
         onChange={handleChange}
         onKeyPress={onKeyPress}

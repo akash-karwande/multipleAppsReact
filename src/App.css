@@ -8,6 +8,13 @@
   color: #000;
 }
 
+.game2048 {
+  background: linear-gradient(45deg, #214169, #101a26);
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 200px;
+}
+
 body::-webkit-scrollbar {
   background: linear-gradient(45deg, #214169, #101a26);
   width: 6px;
@@ -36,6 +43,7 @@ h6.MuiTypography-root.MuiTypography-subtitle1 {
 .youtube {
   margin-top: 50px !important;
   background: linear-gradient(45deg, #214169, #101a26);
+  padding-bottom: 40px;
 }
 
 .game {
@@ -394,6 +402,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: block;
   padding: 10px;
   text-align: left;
+  margin: 2px;
 }
 
 header span svg {
@@ -497,5 +506,9 @@ header span svg {
 
   .MuiPaper-root.MuiPaper-elevation6.MuiPaper-rounded {
     height: 60% !important;
+  }
+
+  .youtube {
+    padding-top: 30px;
   }
 }

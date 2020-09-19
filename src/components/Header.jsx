@@ -15,13 +15,14 @@ const Header = () => {
                 <Menu isOpen={false}  customBurgerIcon={<TiThLarge />}
                     customCrossIcon={< TiTimes />}>
                     <div className='header-menu'>
-                        <NavLink exact activeClassName='navactive' to='/'><span><TiHomeOutline /></span>Home</NavLink>
+                        <NavLink exact activeClassName='navactive' to='/'><span><TiHomeOutline /></span>About Me</NavLink>
                         <NavLink activeClassName='navactive' to='/images'><span><TiImage /></span>Images</NavLink>
                         <NavLink activeClassName='navactive' to='/music'><span><TiNotes /></span>Music</NavLink>
                         <NavLink activeClassName='navactive' to='/expense'><span><TiEye /></span>Expense</NavLink>
                         <NavLink activeClassName='navactive' to='/weather'><span><TiWeatherCloudy /></span>Weather</NavLink>
-                        <NavLink activeClassName='navactive' to='/games'><span><TiPuzzle /></span>Games</NavLink>
                         <NavLink activeClassName='navactive' to='/youtube-clone'><span><TiVideo /></span>YouTube</NavLink>
+                        <NavLink activeClassName='navactive' to='/tictactoc'><span><TiPuzzle /></span>Tic Tac Toc</NavLink>
+                        <NavLink activeClassName='navactive' to='/math-2048'><span><TiPuzzle /></span>2048</NavLink>
                     </div>
                 </Menu>
             </header>

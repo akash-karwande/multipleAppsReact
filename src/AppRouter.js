@@ -14,6 +14,7 @@ import WeatherSearch from './components/weather/WeatherSearch';
 import ImageSearch from './components/ImageSearch';
 import Game from './components/tictaktoc/Game';
 import YouTube from './components/youtube/YouTube';
+import MathMaster from './components/2048/MathMaster';
 
 
 const AppRouter = () => {
@@ -25,7 +26,8 @@ const AppRouter = () => {
                 <Route exact= {true} path='/' component={App}></Route>
                 <Route exact path='/images' component={ImageSearch}></Route>
                 <Route exact path='/youtube-clone' component={YouTube}></Route>
-                <Route exact path='/games' component={Game}></Route>
+                <Route exact path='/math-2048' component={MathMaster}></Route>
+                <Route exact path='/tictactoc' component={Game}></Route>
                 <Route path='/music' component={Music}></Route>
                 <Route exact path='/expense' component={ExpenseDashboard}></Route>
                 <Route path="/add-expense" component={AddExpense}></Route>
