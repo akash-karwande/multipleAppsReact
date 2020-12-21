@@ -1,6 +1,7 @@
 
 const initialState = {
     imagesArray: [],
+    name: '',
     loading: true,
     error: ''
 };
@@ -12,6 +13,7 @@ export const imageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 imagesArray: payload,
+                name: action.name,
                 loading: false
             }
 

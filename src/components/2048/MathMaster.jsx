@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import cloneDeep from "lodash.clonedeep";
+import { TiArrowUpThick, TiArrowRightThick, TiArrowLeftThick, TiArrowDownThick } from "react-icons/ti";
 import { useEvent, getColors } from "./util";
 
 function MathMaster() {
@@ -235,7 +236,6 @@ function MathMaster() {
 
   // Check Gameover
   const checkIfGameOver = () => {
-    console.log("CHECKING GAME OVER");
     // let original = cloneDeep(data);
     let checker = swipeLeft(true);
 
@@ -244,7 +244,6 @@ function MathMaster() {
     }
 
     let checker2 = swipeDown(true);
-    console.log("CHECKER DOWN");
     if (JSON.stringify(data) !== JSON.stringify(checker2)) {
       return false;
     }
@@ -313,6 +312,13 @@ function MathMaster() {
       setGameOver(true);
     }
   };
+
+  const checkGameOver = () => {
+    let gameOverFronBtn = checkIfGameOver();
+    if (gameOverFronBtn) {
+      setGameOver(true);
+    }
+  }
 
   useEffect(() => {
     initialize();
@@ -405,13 +411,12 @@ function MathMaster() {
           })}
         </div>
 
-        <div style={{ width: "inherit" }}>
-          <p className="game-explanation">
-            <strong className="important">How to play:</strong> Use your{" "}
-            <strong>arrow keys</strong> to move the tiles. When two tiles with
-            the same number touch, they <strong>merge into one!</strong>
-          </p>
-        </div>
+        {<div className='nav-buttons' onClick={() => checkGameOver()}>
+          <button className='btn-up' onClick={() => swipeUp()}><TiArrowUpThick /></button><br />
+          <button className='btn-left' onClick={() => swipeLeft()}><TiArrowLeftThick /></button>
+          <button className='btn-down' onClick={() => swipeDown()}><TiArrowDownThick /></button>
+          <button className='btn-right' onClick={() => swipeRight()}><TiArrowRightThick /></button>
+        </div>}
       </div>
     </div>
   );

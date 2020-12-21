@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class PageNotFound extends Component {
     render() {
         return (
-            <div>
-                <h2>404 !</h2>
+            <div className='not-found'>
+                <h2>Nothing is here...</h2>
             </div>
         )
     }

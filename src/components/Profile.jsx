@@ -18,7 +18,7 @@ function Profile() {
                         <div className='name1'><span>I'm</span></div>
                         <div className='name2'><span>Akash</span></div>
                         <div className='name3'><span>Karwande</span></div>
-                        <p><strong>Software developer</strong> at Palpx </p>
+                        <p><strong>Software developer</strong> at ThinkBumblebee Analytics </p>
                         <p>Hands-On experience on developing a web application from scratch using Angular, Node js,
                         ReactJs, Redux, Material UI, MongoDB, HTML, CSS, javaScript, ES6, Typescript,
                         Bootstrap, Angular-material, AWS, Firebase, GCP.

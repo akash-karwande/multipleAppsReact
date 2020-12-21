@@ -3,13 +3,13 @@ import WeatherGet from './WeatherGet';
 import { connect } from 'react-redux';
 import { getWeather } from '../../actions/weather'
 
-const WeatherSearch = ({ weather,loading, getWeather }) => {
+const WeatherSearch = ({ name, weather,loading, getWeather }) => {
 
-    const [city, setCity] = useState('');
+    const [city, setCity] = useState(name);
 
     useEffect(() => {
         document.title = 'Weather | Search'
-        getWeather();
+        getWeather(city);
     },[getWeather])
 
 
@@ -26,7 +26,7 @@ const WeatherSearch = ({ weather,loading, getWeather }) => {
     return (
         <div className='weather-app'>
             <h2>Get Weather for your City</h2>
-            <input id="input-area" type='text' onKeyPress={onType} onChange={handleInput} placeholder='Search weather for your location' value={city} />
+            <input autoFocus id="input-area" type='text' onKeyPress={onType} onChange={handleInput} placeholder='Search weather for your location' value={city} />
             <button id="button-ele" onClick={() => getWeather(city)}>Search</button>
 
             {loading && <h4>Loading...</h4>}
@@ -39,6 +39,7 @@ const WeatherSearch = ({ weather,loading, getWeather }) => {
 const mapStateToProps = (state) => {
     return {
         weather: state.weather,
+        name: state.weather.name,
         loading: state.weather.loading
     }
 }

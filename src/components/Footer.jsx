@@ -6,7 +6,7 @@ class Footer extends Component {
         return (
             <div>
                 <footer>
-                    <p><a target='_blank' rel='noopener noreferrer' href='https:\\karwande.com'>Wanna know more about maker?</a></p>
+                    <p> Contact Me:  <a target='_blank' rel='noopener noreferrer' href="mailto:akashnkarwande@gmail.com">akashnkarwande@gmail.com</a></p>
                 </footer>
             </div>
         )

@@ -1,24 +1,24 @@
 const initialState = {
-    weatherInfo: {},
-    name: 'Mumbai',
+    videos: [],
+    videoSearch: '#',
     loading: true,
     error: ''
 }
 
 
-export const weatherReducer = (state=initialState, action) => {
+export const youtubeReducer = (state=initialState, action) => {
     const {type, payload} = action;
 
     switch(type) {
-        case 'GET_WEATHER':
+        case 'GET_VIDEOS':
             return {
                 ...state,
-                name: action.name,
-                weatherInfo: payload,
+                videoSearch: action.videoSearch,
+                videos: payload,
                 loading: false
             }
 
-        case 'WEATHER_ERROR':
+        case 'VIDEOS_ERROR':
             return {
                 ...state,
                 error: payload,

@@ -8,11 +8,19 @@
   color: #000;
 }
 
+.not-found {
+  padding: 200px 0;
+  text-align: center;
+}
+
+.not-found h2 {
+  font-size: 40px;
+}
+
 .game2048 {
   background: linear-gradient(45deg, #214169, #101a26);
   color: #fff;
   padding-top: 60px;
-  padding-bottom: 200px;
 }
 
 body::-webkit-scrollbar {
@@ -46,6 +54,11 @@ h6.MuiTypography-root.MuiTypography-subtitle1 {
   padding-bottom: 40px;
 }
 
+.youtubeLoader {
+  text-align: center;
+  color: #fff;
+}
+
 .game {
   padding: 60px 0px;
   background: linear-gradient(45deg, #214169, #101a26);
@@ -57,11 +70,6 @@ h6.MuiTypography-root.MuiTypography-subtitle1 {
 
 .loading {
   text-align: center;
-}
-
-.expense-app,
-.game {
-  height: 100vh;
 }
 
 .name1 span,
@@ -82,6 +90,26 @@ body {
   width: 50%;
 }
 
+.nav-buttons {
+  text-align: center;
+  padding: 10px;
+}
+
+.nav-buttons button svg {
+  position: relative;
+  top: 3px;
+}
+
+.nav-buttons button {
+  font-size: 20px;
+  padding: 5px 15px;
+  background: blue;
+  color: #fff;
+  outline: none;
+  border: none;
+  margin: 5px;
+}
+
 .image img {
   height: 270px;
   border: 5px solid #4300b9;
@@ -94,6 +122,22 @@ body {
 
 .expense-filter input {
   margin-top: 30px;
+}
+
+button.restartTic {
+  padding: 5px 15px;
+  background: linear-gradient(45deg, #214169, #101a26);
+  border: none;
+  outline: none;
+  color: #fff;
+  float: right;
+}
+
+div#winner {
+  color: #0019a7;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 28px;
 }
 
 footer a {

@@ -32,9 +32,15 @@ function Board() {
         status = 'Next player: ' + (isXnext ? 'x' : 'o');
     }
 
+    const restart = () => {
+        setSquares(Array(9).fill(null));
+    }
+
     return (
         <div>
-            <div className="status">{status}</div>
+            <div className="status" id={winner? 'winner': ''}>{status}
+            <button className='restartTic' onClick={() => restart()}>Restart</button>
+            </div>
 
             <div className="board-row">
                 {renderSquare(0)}

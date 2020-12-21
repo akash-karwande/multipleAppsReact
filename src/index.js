@@ -25,7 +25,6 @@ const jsx = (
 )
 
 
-ReactDOM.render(jsx, document.getElementById('root')
-);
+ReactDOM.render(jsx, document.getElementById('root'));
 
 serviceWorker.unregister();

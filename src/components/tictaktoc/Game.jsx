@@ -4,7 +4,7 @@ import Board from './Board'
 function Game(props) {
 
     useEffect(() => {
-        document.title = 'Play | Games'
+        document.title = 'Play | TicTak'
     },[])
     return (
         <div className="game">

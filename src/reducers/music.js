@@ -1,4 +1,5 @@
 const initialState = {
+    name: 'Jonita Gandhi',
     artist: {},
     songs: [],
     loading: true
@@ -12,6 +13,7 @@ export const musicReducer = (state = initialState, action ) => {
             return {
                 ...state,
                 artist: payload,
+                name: action.name,
                 loading: true
             }
 

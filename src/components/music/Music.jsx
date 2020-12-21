@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getMusic } from '../../actions/music'
 
-const Music = ({ artist, songs, getMusic, loading }) => {
-    const [name, setName] = useState('');
+const Music = ({ artist, name:nameArt, songs, getMusic, loading }) => {
+    const [name, setName] = useState(nameArt);
 
     useEffect(() => {
-        getMusic();
+        getMusic(name);
     }, [getMusic]);
 
     const onEnter = (e) => {
@@ -23,7 +23,7 @@ const Music = ({ artist, songs, getMusic, loading }) => {
 
         <div className="music-component">
             <h2>Music Lover</h2>
-            <input id="input-area" type="text" onKeyPress={onEnter} value={name} onChange={e => setName(e.target.value)} placeholder="Search by artist" />
+            <input id="input-area" autoFocus type="text" onKeyPress={onEnter} value={name} onChange={e => setName(e.target.value)} placeholder="Search by artist" />
             <button id="button-ele" onClick={() => getMusic(name)}>Search</button>
             {loading && <h4>Loading ...</h4>}
             {!loading && <Artist artistInfo={artist}></Artist>}
@@ -35,6 +35,7 @@ const Music = ({ artist, songs, getMusic, loading }) => {
 
 Music.prototype = {
     artist: PropTypes.array.isRequired,
+    name: PropTypes.string.isRequired,
     songs: PropTypes.array.isRequired,
     loading: PropTypes.bool.isRequired,
     getMusic: PropTypes.func.isRequired
@@ -43,6 +44,7 @@ Music.prototype = {
 
 const mapStateToProps = (state) => {
     return {
+        name: state.music.name,
         artist: state.music.artist,
         songs: state.music.songs,
         loading: state.music.loading

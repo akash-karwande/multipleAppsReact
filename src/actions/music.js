@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 
-export const getMusic = (name='Charlie Puth') => async (dispatch) => {
+export const getMusic = (name) => async (dispatch) => {
 
     try {
         const {data: {artists: {items}}} = await axios.get(`https://spotify-api-wrapper.appspot.com/artist/${name}`);
         await dispatch({
             type: 'GET_SINGER',
+            name: name,
             payload: items[0]
         })
 

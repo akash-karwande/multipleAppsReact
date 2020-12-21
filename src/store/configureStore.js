@@ -6,6 +6,7 @@ import filtersReducer from '../reducers/filters';
 import { imageReducer } from '../reducers/image';
 import { musicReducer } from '../reducers/music'
 import { weatherReducer } from '../reducers/weather'
+import { youtubeReducer } from '../reducers/youtube';
 
 const middleware = [thunk];
 
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     filters: filtersReducer,
     images: imageReducer,
     music: musicReducer,
-    weather: weatherReducer
+    weather: weatherReducer,
+    youtube: youtubeReducer
 });
 // create store  
 
