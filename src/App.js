@@ -12,3 +12,7 @@ function App() {
 }
 
 export default App;
+
+
+// npm run build
+//firebase deploy --only hosting:akash-karwande
