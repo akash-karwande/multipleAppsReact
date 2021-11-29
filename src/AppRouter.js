@@ -6,7 +6,6 @@ import App from './App';
 import Music from './components/music/Music';
 import PageNotFound from './components/PageNotFound';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import AddExpense from './components/expensify/AddExpense';
 import EditExpensePage from './components/expensify/EditExpensePage';
 import ExpenseDashboard from './components/expensify/ExpenseDashboard';
@@ -35,7 +34,6 @@ const AppRouter = () => {
                 <Route path="/edit/:id" component={EditExpensePage}></Route>
                 <Route> <PageNotFound /> </Route>
             </Switch>
-            <Footer />
         </Router>
     </React.StrictMode>
 };

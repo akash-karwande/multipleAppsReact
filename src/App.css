@@ -21,6 +21,7 @@
   background: linear-gradient(45deg, #214169, #101a26);
   color: #fff;
   padding-top: 60px;
+  height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -63,6 +64,7 @@ h6.MuiTypography-root.MuiTypography-subtitle1 {
   padding: 60px 0px;
   background: linear-gradient(45deg, #214169, #101a26);
   color: #fff;
+  height: 100vh;
 }
 .game-board {
   text-align: center;
@@ -175,6 +177,7 @@ footer a {
   padding-top: 40px;
   background: linear-gradient(45deg, #214169, #101a26);
   color: #fff;
+
 }
 
 .small p {
