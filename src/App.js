@@ -15,4 +15,5 @@ export default App;
 
 
 // npm run build
+// firebase login --reauth
 //firebase deploy --only hosting:akash-karwande
