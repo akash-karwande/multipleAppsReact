@@ -114,7 +114,6 @@ body {
 
 .image img {
   height: 270px;
-  border: 5px solid #4300b9;
 }
 
 .name2 span,
@@ -161,7 +160,7 @@ footer a {
 }
 
 .image {
-  margin-left: 20px;
+  margin-left: 60px;
 }
 
 .image-and-text {
@@ -412,11 +411,6 @@ footer span {
   background: #a90000;
 }
 
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
 
 /* Color/shape of close button cross */
 .bm-cross {
@@ -424,8 +418,7 @@ footer span {
 }
 
 .bm-cross-button {
-  top: 25px !important;
-  right: 30px !important;
+  display: none;
 }
 
 .bm-item.header-menu:focus {
@@ -503,7 +496,6 @@ header span svg {
   }
 
   .image img {
-    border: 5px solid #4300b9;
     width: 90%;
     height: unset;
   }

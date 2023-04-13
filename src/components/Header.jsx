@@ -12,8 +12,7 @@ const Header = () => {
                 <a rel="noopener noreferrer" href='https://github.com/akash-karwande?tab=repositories' target='_blank'>Fork me on Github</a>
             </div>
             <header>
-                <Menu isOpen={false}  customBurgerIcon={<TiThLarge />}
-                    customCrossIcon={< TiTimes />}>
+                <Menu isOpen={false}  customBurgerIcon={<TiThLarge />}>
                     <div className='header-menu'>
                         <NavLink exact activeClassName='navactive' to='/'><span><TiHomeOutline /></span>About Me</NavLink>
                         <NavLink activeClassName='navactive' to='/images'><span><TiImage /></span>Images</NavLink>
